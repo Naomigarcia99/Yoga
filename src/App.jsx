@@ -1,25 +1,24 @@
-import { useState } from 'react'
-import './assets/styles/App.css'
+import "./assets/styles/App.css";
+import Home from "./pages/home";
+import Map from "./pages/map";
+import Grafics from "./pages/grafics";
+import Calendar from "./pages/calendar";
+import Navbar from "./components/navbar";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/grafics" element={<Grafics />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
