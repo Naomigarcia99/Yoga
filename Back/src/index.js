@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import mysql from "mysql2";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 import usersRoutes from "./routes/users.js";
@@ -12,7 +11,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
