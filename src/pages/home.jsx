@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import UserList from "../components/UserList";
 
 export default function home() {
   return (
-    <div>home</div>
-  )
+    <>
+      <UserList />
+    </>
+  );
 }
