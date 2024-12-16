@@ -6,17 +6,20 @@ import Calendar from "./pages/calendar";
 import Navbar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
+import { LocationsProvider } from "./context/LocationsContext";
 
 function App() {
   return (
     <UserProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/graphics" element={<Graphics />} />
-      </Routes>
+      <LocationsProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/graphics" element={<Graphics />} />
+        </Routes>
+      </LocationsProvider>
     </UserProvider>
   );
 }
