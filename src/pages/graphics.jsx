@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Chartjs from "../components/Chartjs";
 
-export default function graphics() {
+export default function Graphics() {
   return (
-    <div>graphics</div>
-  )
+    <>
+      <Chartjs />
+    </>
+  );
 }
