@@ -7,18 +7,21 @@ import Navbar from "./components/navbar";
 import { Routes, Route } from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 import { LocationsProvider } from "./context/LocationsContext";
+import { SaleProvider } from "./context/SalesContext";
 
 function App() {
   return (
     <UserProvider>
       <LocationsProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/graphics" element={<Graphics />} />
-        </Routes>
+        <SaleProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/graphics" element={<Graphics />} />
+          </Routes>
+        </SaleProvider>
       </LocationsProvider>
     </UserProvider>
   );
