@@ -1,19 +1,25 @@
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 import { useSaleContext } from "../context/SalesContext";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
+  scales,
 } from "chart.js";
+import { plugin } from "postcss";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -93,10 +99,43 @@ export default function Chartjs() {
     },
   };
 
+  const lineChartData = {
+    labels,
+    datasets: [
+      {
+        label: "Camisetas",
+        data: camisetaData,
+        borderColor: "#eb2525",
+        fill: false,
+      },
+      {
+        label: "Pantalones",
+        data: pantalonData,
+        borderColor: "#10c000",
+        fill: false,
+      },
+    ],
+  };
+
+  const lineOptions = {
+    responsive: true,
+    plugins: {
+      legend: { position: "top" },
+      title: { display: true, text: "2024 Sales" },
+    },
+    scales: {
+      x: { title: { display: true, text: "Months" } },
+      y: { title: { display: true, text: "Quantity Sold" } },
+    },
+  };
+
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="mt-48 w-full h-screen flex items-center justify-center">
       <div className="w-full max-w-4xl mx-auto">
+        <h2 className="text-xl font-bold text-center">Bar chart</h2>
         <Bar data={barChartData} options={options} />
+        <h2 className="text-xl font-bold text-center">Line Chart</h2>
+        <Line data={lineChartData} options={lineOptions} />
       </div>
     </div>
   );
