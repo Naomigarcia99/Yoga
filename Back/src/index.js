@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import usersRoutes from "./routes/users.js";
 import locationsRoutes from "./routes/locations.js";
+import salesRoutes from "./routes/sales.js";
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
 
 app.use("/users", usersRoutes);
 app.use("/locations", locationsRoutes);
+app.use("/sales", salesRoutes);
 
 app.listen(port, () => {
   console.log(`Backend server running on http://localhost:${port}`);
