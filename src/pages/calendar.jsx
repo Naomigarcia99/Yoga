@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import Calendar from "../components/FullCalendar";
 
 export default function calendar() {
   return (
-    <div>calendar</div>
-  )
+    <>
+      <Calendar />
+    </>
+  );
 }
