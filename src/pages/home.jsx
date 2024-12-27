@@ -1,5 +1,5 @@
 import React from "react";
-import Yoga from "../assets/styles/yoga.jpg";
+import Yoga from "../assets/styles/images/yoga.jpg";
 
 export default function home() {
   return (
