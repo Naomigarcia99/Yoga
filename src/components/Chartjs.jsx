@@ -51,31 +51,31 @@ export default function Chartjs() {
     const month = date.getMonth();
 
     if (!acc[month]) {
-      acc[month] = { camisetas: 0, pantalones: 0 };
+      acc[month] = { mats: 0, totebags: 0 };
     }
 
-    if (sale.name === "Camiseta") acc[month].camisetas += sale.quantity;
-    if (sale.name === "Pantalón") acc[month].pantalones += sale.quantity;
+    if (sale.name === "Camiseta") acc[month].mats += sale.quantity;
+    if (sale.name === "Pantalón") acc[month].totebags += sale.quantity;
     return acc;
   }, {});
 
   const labels = Object.keys(data).map((month) => getMonthName(Number(month)));
-  const camisetaData = Object.values(data).map((data) => data.camisetas);
-  const pantalonData = Object.values(data).map((data) => data.pantalones);
+  const camisetaData = Object.values(data).map((data) => data.mats);
+  const pantalonData = Object.values(data).map((data) => data.totebags);
 
   const barChartData = {
     labels,
     datasets: [
       {
-        label: "Camisetas",
+        label: "Mats",
         data: camisetaData,
-        backgroundColor: "#2563eb",
+        backgroundColor: "#eb25cd",
         borderWidth: 1,
       },
       {
-        label: "Pantalones",
+        label: "Totebags",
         data: pantalonData,
-        backgroundColor: "#d97706",
+        backgroundColor: "#ff98fa",
         borderWidth: 1,
       },
     ],
@@ -103,15 +103,15 @@ export default function Chartjs() {
     labels,
     datasets: [
       {
-        label: "Camisetas",
+        label: "Mats",
         data: camisetaData,
-        borderColor: "#eb2525",
+        borderColor: "#eb25a9",
         fill: false,
       },
       {
-        label: "Pantalones",
+        label: "Totebags",
         data: pantalonData,
-        borderColor: "#10c000",
+        borderColor: "#ffb8f4",
         fill: false,
       },
     ],
@@ -130,13 +130,18 @@ export default function Chartjs() {
   };
 
   return (
-    <div className="mt-48 w-full h-screen flex items-center justify-center">
-      <div className="w-full max-w-4xl mx-auto">
-        <h2 className="text-xl font-bold text-center">Bar chart</h2>
-        <Bar data={barChartData} options={options} />
-        <h2 className="text-xl font-bold text-center">Line Chart</h2>
-        <Line data={lineChartData} options={lineOptions} />
+    <>
+      <div className="flex justify-center mt-16 mb-2">
+        <h1 className="font-bold text-3xl text-pink-300">MERCHANDISING</h1>
       </div>
-    </div>
+      <div className="mt-32 w-full h-screen flex items-center justify-center text-pink-300">
+        <div className="w-full max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-center">Bar chart</h2>
+          <Bar data={barChartData} options={options} />
+          <h2 className="text-xl font-bold text-center">Line Chart</h2>
+          <Line data={lineChartData} options={lineOptions} />
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import "./assets/styles/App.css";
 import Home from "./pages/home";
+import Users from "./pages/users";
 import Map from "./pages/map";
 import Graphics from "./pages/graphics";
 import Calendar from "./pages/calendar";
@@ -19,6 +20,7 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/users" element={<Users />} />
               <Route path="/map" element={<Map />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/graphics" element={<Graphics />} />

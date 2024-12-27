@@ -13,8 +13,8 @@ const UserItem = ({ user, index }) => {
   return (
     <tr
       className={`${
-        index % 2 === 0 ? "bg-gray-50" : "bg-white"
-      } hover:bg-gray-100`}
+        index % 2 === 0 ? "bg-pink-50" : "bg-white"
+      } hover:bg-pink-200`}
     >
       {isEditing ? (
         <td>
@@ -22,8 +22,8 @@ const UserItem = ({ user, index }) => {
         </td>
       ) : (
         <>
-          <td className="py-3 px-2">{user.name}</td>
-          <td className="py-3 px-4">{user.email}</td>
+          <td className="py-3 px-6">{user.name}</td>
+          <td className="py-3 px-6">{user.email}</td>
           <td className="py-3 px-6 text-center flex gap-2 justify-center">
             <button
               onClick={() => setIsEditing(true)}

@@ -28,7 +28,7 @@ const UserForm = ({ user, setIsEditing, setIsCreating }) => {
   }, [user]);
 
   return (
-    <form onSubmit={handleSubmit} className="flex p-4 bg-white shadow-md rounded-lg space-x-6 w-full justify-center">
+    <form onSubmit={handleSubmit} className="flex p-4 bg-white shadow-md rounded-full space-x-6 w-full justify-center">
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Name
@@ -39,7 +39,7 @@ const UserForm = ({ user, setIsEditing, setIsCreating }) => {
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
           required
-          className="shadow border rounded px-3"
+          className="shadow border rounded-xl px-3"
         />
       </div>
       <div className="mb-4">
@@ -52,13 +52,13 @@ const UserForm = ({ user, setIsEditing, setIsCreating }) => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          className="shadow border rounded px-3"
+          className="shadow border rounded-xl px-3"
         />
       </div>
       <div className="flex justify-end gap-4">
         <button
           type="submit"
-          className="bg-pink-200 hover:bg-pink-300 text-pink-600 hover:text-white"
+          className="rounded-full bg-pink-200 hover:bg-pink-300 text-pink-600 hover:text-white"
         >
           {user ? "Update User" : "Add User"}
         </button>

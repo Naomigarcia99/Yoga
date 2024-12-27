@@ -36,7 +36,7 @@ router.put("/:id", (req, res) => {
   const { id } = req.params;
   const db = req.db;
   db.query(
-    "UPDATE event SET title = ?, start = ?, end = ?, allDay = ? WHERE id = ?",
+    "UPDATE events SET title = ?, start = ?, end = ?, allDay = ? WHERE id = ?",
     [title, start, end, allDay, id],
     (err, result) => {
       if (err) {

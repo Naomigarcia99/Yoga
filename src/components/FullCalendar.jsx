@@ -48,7 +48,8 @@ function Calendar() {
 
   return (
     <>
-      <div className="w-full max-w-4xl mx-auto pt-24">
+      <div className="w-full max-w-4xl mx-auto text-pink-300 font-bold pt-20">
+        <h1 className="font-bold text-3xl text-pink-300">OUR CLASSES</h1>
         <FullCalendar
           plugins={[dayGridPlugin, interactionPlugin]}
           initialView="dayGridMonth"

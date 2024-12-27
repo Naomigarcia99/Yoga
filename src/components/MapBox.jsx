@@ -49,15 +49,18 @@ export default function MapBox() {
 
   return (
     <>
+      <div className="flex justify-center mt-5 mb-2">
+        <h1 className="font-bold text-3xl text-pink-300">OUR LOCATIONS</h1>
+      </div>
       <div className="relative flex flex-col items-center justify-center">
         <div className="w-full max-w-lg p-4">
           <select
-            className="select select-primary border-2 rounded-full"
+            className="select bg-pink-50 border-2 border-pink-300 rounded-full"
             onChange={handleLocationSelect}
             defaultValue=""
           >
             <option value="" disabled>
-              Selecciona una ubicación
+              Select a center
             </option>
             {locations.map((location) => (
               <option key={location.id} value={location.id}>
