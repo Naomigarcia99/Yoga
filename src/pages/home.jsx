@@ -14,7 +14,7 @@ export default function home() {
         <p className="mt-10 text-white font-bold w-2/4">
           This is the website of our yoga centers where you can create a user,
           locate us on the map, check our classes on the calendar and see our
-          merchandising statistics.
+          merchandise statistics.
         </p>
       </div>
     </>

@@ -132,7 +132,7 @@ export default function Chartjs() {
   return (
     <>
       <div className="flex justify-center mt-16 mb-2">
-        <h1 className="font-bold text-3xl text-pink-300">MERCHANDISING</h1>
+        <h1 className="font-bold text-3xl text-pink-300">MERCHANDISE</h1>
       </div>
       <div className="mt-32 w-full h-screen flex items-center justify-center text-pink-300">
         <div className="w-full max-w-4xl mx-auto">
